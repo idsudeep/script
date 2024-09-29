@@ -56,7 +56,7 @@ $runq = mysqli_query($conn , $q);
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['contact']; ?></td>
                         <td><?php echo $row['email']; ?></td>   
-                        <td> <a href="edit_user.php?userid=<?php echo $row['id'];?>">Edit</a></td> 
+                        <td> <a href="edit_user.php?userid=<?php echo $row['id'];?>">Edit</a>| <a href="delete_user.php?userid=<?php echo $row['id'];?>">Delete</a> </td> 
                         </tr>
                         <?php }?>
       

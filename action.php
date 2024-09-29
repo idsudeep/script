@@ -2,7 +2,7 @@
 
 require_once 'config.php';
 echo "<pre>";
-//  $_GET   and $_POST
+
  if($_GET['form']=='register'){
 
     $fname = $_POST['fname'];

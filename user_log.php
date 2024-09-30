@@ -9,6 +9,21 @@ $q = "select id , name , contact ,email from user_log";
 
 $runq = mysqli_query($conn , $q);
 
+if(isset($_GET['action'])){
+
+    $userid = $_GET['userid'];
+ $delete_query = "delete from user_log where id = '$userid' ";
+header("location:user_log.php");
+ if(mysqli_query($conn ,$delete_query)){
+
+    echo "User deleted ";
+    
+
+ }else{
+
+    echo "error , user Not Deleted";
+ }
+}
 
 ?>
 
@@ -56,7 +71,7 @@ $runq = mysqli_query($conn , $q);
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['contact']; ?></td>
                         <td><?php echo $row['email']; ?></td>   
-                        <td> <a href="edit_user.php?userid=<?php echo $row['id'];?>">Edit</a>| <a href="delete_user.php?userid=<?php echo $row['id'];?>">Delete</a> </td> 
+                        <td> <a href="edit_user.php?userid=<?php echo $row['id'];?>">Edit</a>| <a href="user_log.php?action=delete_user&userid=<?php echo $row['id'];?>">Delete</a> </td> 
                         </tr>
                         <?php }?>
       
